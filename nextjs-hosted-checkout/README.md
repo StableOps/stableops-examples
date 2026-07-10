@@ -9,6 +9,8 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FStableOps%2Fstableops-examples&root-directory=nextjs-hosted-checkout&env=DATABASE_URL,DIRECT_URL,STABLEOPS_API_KEY,STABLEOPS_WEBHOOK_SECRET,APP_URL&envDescription=Add%20your%20Supabase%20connection%20URLs%20and%20server-only%20StableOps%20credentials.)
 
+**Demo:** <https://nextjs-hosted-checkout.vercel.app/>
+
 A deployable Next.js App Router example: click a button to enter a StableOps-hosted payment page and complete a test payment of **12.00 USDC on Base Sepolia**. The browser never sees `STABLEOPS_API_KEY`; the server creates a Checkout Session and order status is updated only via signed webhooks.
 
 The Deploy Button specifies only the repository, example directory, and environment variable names — **it does not pass any passwords, API keys, or webhook secrets**. Store these values only in a local `.env`, Vercel Environment Variables, or another secrets manager.
@@ -72,6 +74,8 @@ pnpm build
 ## 中文
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FStableOps%2Fstableops-examples&root-directory=nextjs-hosted-checkout&env=DATABASE_URL,DIRECT_URL,STABLEOPS_API_KEY,STABLEOPS_WEBHOOK_SECRET,APP_URL&envDescription=Add%20your%20Supabase%20connection%20URLs%20and%20server-only%20StableOps%20credentials.)
+
+**在线演示：** <https://nextjs-hosted-checkout.vercel.app/>
 
 这是一个可直接部署的 Next.js App Router 示例：用户点击按钮后会进入 StableOps 托管支付页面，使用 **Base Sepolia 上的 12.00 USDC** 完成测试支付。浏览器不会接触 `STABLEOPS_API_KEY`；服务端创建 Checkout Session，并且只以已验签的 webhook 更新订单状态。
 

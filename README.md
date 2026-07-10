@@ -12,7 +12,7 @@ Example projects demonstrating how to integrate [StableOps](https://stableops.io
 
 | Project | Description |
 | --- | --- |
-| [nextjs-hosted-checkout](./nextjs-hosted-checkout) | Next.js App Router + Vercel deployment: hosted USDC checkout on Base Sepolia. |
+| [nextjs-hosted-checkout](./nextjs-hosted-checkout) | Next.js App Router + Vercel deployment: hosted USDC checkout on Base Sepolia. [Demo](https://nextjs-hosted-checkout.vercel.app/) |
 
 ### Getting started
 
@@ -37,7 +37,7 @@ These examples are provided as-is for reference purposes. See the repository roo
 
 | 项目 | 说明 |
 | --- | --- |
-| [nextjs-hosted-checkout](./nextjs-hosted-checkout) | Next.js App Router + Vercel 部署：Base Sepolia 上的托管 USDC 结账。 |
+| [nextjs-hosted-checkout](./nextjs-hosted-checkout) | Next.js App Router + Vercel 部署：Base Sepolia 上的托管 USDC 结账。[在线演示](https://nextjs-hosted-checkout.vercel.app/) |
 
 ### 快速开始
 
