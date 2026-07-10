@@ -21,12 +21,14 @@ export async function createCheckoutForAttempt({
   origin,
   store,
   createSession,
+  walletConnectProjectId,
   now = new Date(),
 }: {
   attemptId: string
   origin: string
   store: Store
   createSession: CreateSession
+  walletConnectProjectId?: string
   now?: Date
 }): Promise<{ url: string }> {
   let order = await store.find(attemptId)
@@ -58,6 +60,7 @@ export async function createCheckoutForAttempt({
     title: 'Next.js USDC demo',
     successUrl: `${resultBaseUrl}&result=success`,
     cancelUrl: `${resultBaseUrl}&result=cancel`,
+    walletConnectProjectId,
   })
 
   await store.saveCheckout(attemptId, checkout.paymentOrderId, checkout.url)

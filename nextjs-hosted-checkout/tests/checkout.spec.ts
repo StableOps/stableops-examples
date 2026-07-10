@@ -161,4 +161,45 @@ describe('createCheckoutForAttempt', () => {
       expect.objectContaining({ expiresAt: expiresAt.toISOString() }),
     )
   })
+
+  it('passes walletConnectProjectId to the checkout session when provided', async () => {
+    const store = createStore()
+    const createSession = vi.fn(async () => ({
+      paymentOrderId: 'po_123',
+      url: 'https://pay.example/cs_123',
+    }))
+
+    await createCheckoutForAttempt({
+      attemptId: 'a0f32a2a-32f3-4d95-8ccf-5f2b5d8b8c1e',
+      origin: 'https://shop.example',
+      store,
+      createSession,
+      walletConnectProjectId: 'test-project-id',
+      now: new Date('2026-07-10T00:00:00.000Z'),
+    })
+
+    expect(createSession).toHaveBeenCalledWith(
+      expect.objectContaining({ walletConnectProjectId: 'test-project-id' }),
+    )
+  })
+
+  it('omits walletConnectProjectId when not provided', async () => {
+    const store = createStore()
+    const createSession = vi.fn(async () => ({
+      paymentOrderId: 'po_123',
+      url: 'https://pay.example/cs_123',
+    }))
+
+    await createCheckoutForAttempt({
+      attemptId: 'a0f32a2a-32f3-4d95-8ccf-5f2b5d8b8c1e',
+      origin: 'https://shop.example',
+      store,
+      createSession,
+      now: new Date('2026-07-10T00:00:00.000Z'),
+    })
+
+    expect(createSession).toHaveBeenCalledWith(
+      expect.objectContaining({ walletConnectProjectId: undefined }),
+    )
+  })
 })

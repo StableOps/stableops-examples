@@ -33,6 +33,7 @@ export async function POST(request: Request) {
       origin,
       store: orderStore,
       createSession: createStableOpsCheckout,
+      walletConnectProjectId: process.env.WALLETCONNECT_PROJECT_ID || undefined,
     })
     return NextResponse.json(checkout)
   } catch (error) {
