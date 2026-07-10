@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum PaymentStatus {
+  CREATED
+  DETECTED
+  CONFIRMED
+  FINALIZED
+  REVERTED
+  EXPIRED
+  CANCELED
+}
+
+model Order {
+  id                String        @id
+  stableOpsOrderId  String?       @unique
+  checkoutUrl       String?
+  checkoutExpiresAt DateTime
+  paymentStatus     PaymentStatus @default(CREATED)
+  fulfilledAt       DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  webhookEvents     WebhookEvent[]
+}
+
+model WebhookEvent {
+  id                String   @id @default(cuid())
+  eventId           String   @unique
+  type              String
+  stableOpsOrderId  String?
+  payload           Json
+  receivedAt        DateTime @default(now())
+  order             Order?   @relation(fields: [orderId], references: [id])
+  orderId           String?
+}
