@@ -6,12 +6,12 @@
 
 ## English
 
-Example projects demonstrating how to integrate [StableOps](https://stableops.io) payment flows into common web frameworks.
+Example projects demonstrating how to integrate [StableOps](https://stableops.dev) payment flows into common web frameworks.
 
 ### Projects
 
-| Project | Description |
-| --- | --- |
+| Project                                            | Description                                                                                                                      |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | [nextjs-hosted-checkout](./nextjs-hosted-checkout) | Next.js App Router + Vercel deployment: hosted USDC checkout on Base Sepolia. [Demo](https://nextjs-hosted-checkout.vercel.app/) |
 
 ### Getting started
@@ -31,12 +31,12 @@ These examples are provided as-is for reference purposes. See the repository roo
 
 ## 中文
 
-演示如何将 [StableOps](https://stableops.io) 支付流程集成到常见 Web 框架中的示例项目。
+演示如何将 [StableOps](https://stableops.dev) 支付流程集成到常见 Web 框架中的示例项目。
 
 ### 项目列表
 
-| 项目 | 说明 |
-| --- | --- |
+| 项目                                               | 说明                                                                                                                      |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | [nextjs-hosted-checkout](./nextjs-hosted-checkout) | Next.js App Router + Vercel 部署：Base Sepolia 上的托管 USDC 结账。[在线演示](https://nextjs-hosted-checkout.vercel.app/) |
 
 ### 快速开始
